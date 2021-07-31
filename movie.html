@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            margin: 0px;
+
+        }
+        .mainclass{
+            width: 100%;
+            margin-top: 0px;
+            display: block;
+        }
+       
+        .img{
+            width: 95%;
+            position: relative;
+            display: none;
+            margin-top: 0px;
+            display: block;
+        }
+        .imgclass{
+            margin-top: 0px;
+            display: block;
+        }
+        
+        .arrow{
+            position: absolute;
+            top: 35%;
+            font-size: 25px;
+            padding: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            color: azure;
+        } 
+        .prev{
+            left: 10px;
+        }
+        .after{
+            right: 100px;
+        }
+        .arrow:hover{
+            background-color: azure;
+            color: black;
+        }
+
+        select{
+            background-color: yellow;
+            padding: 5px;
+            margin-top: 15px;
+            margin-left: 50px;
+            font-weight: bolder;
+            border-radius: 6%;
+            width: 150px;
+            text-align: center;
+
+        }
+        select option{
+            background-color: white;
+
+        }
+        .movieimg{
+            margin: 25px 55px 20px 50px;
+        }
+        .movie{
+            margin: 0px;
+            width: 100%;
+        }
+       
+        .first,.sec,.third,.fourth,.fifth,.sixth,.seven,.eight,.nine,.ten,.eleven,.twelve,.thirteen,.fourteen,.fifhteen,.sixteen,.seventeen,.eighteen,.nineteen,.twenty,.twoone,.two2,.two3,.two4,.two5,.two6,.two7,.two8,.two9,.two10,.three1,.three2,.three3,.three4,.three5,.three6{
+            max-width: 200px;
+            /* border: 2px white solid; */
+            position: relative;
+            display: inline-block;
+            margin: 12px 4px;
+        }
+        .one{
+            position: absolute;
+            bottom: 5px;
+            margin: auto;
+            width: 100%;
+            
+        }
+        h3, h4{
+            text-align: center;
+            margin: 0px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.486);
+            font-family: sans-serif;
+        }
+        h4{
+            font-weight: 100;
+            font-size: 15px;
+        }
+        /* /---------fotter-----/ */
+        footer{
+            padding: 12px;
+            background-color: #f2ca5c;
+            margin: 100px 0px 0px 0px;
+            animation-name: changecolor;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            animation-direction: reverse;
+            
+        }
+         button {
+            margin-left: 80px;
+            padding: 3px 5px;
+            font-size: 27px;
+            border-radius: 12%;
+            background-color: #e0bf65;
+            color: rgb(80, 47, 47);
+            border: none;
+            box-shadow: 2px 2px 3px 2px rgb(17, 16, 16);
+            cursor: pointer;
+        }
+        button a{
+            text-decoration: none;
+        }
+        p{
+            color:black;
+            display:inline-block;
+            margin-left: 60px;
+            
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .select2{
+            display: none;
+        }
+        #logolist{
+            background-color: gold;
+            margin-top: 0%;
+            width: 100%;
+            height: auto;
+            animation-name: changecolor;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            animation-direction: reverse;
+            padding: 15px;
+            margin-bottom: 0px;
+        }
+        
+        #logo,#try{
+    
+             text-decoration: none;
+        }
+        ul{
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+        }
+        li{
+            padding-left: 30px;
+            text-align: center;
+        }
+        @keyframes changecolor{
+            0%{background-color:goldenrod;}
+            100%{background-color:rgb(151, 228, 215);}
+        }
+        #search{
+            width: 76%;
+            margin-left: 100px;
+            display: inline-block;
+            padding: 5px;
+            font-weight: bold;
+            right: 0px;
+            background-color: rgb(189, 189, 7);
+        }
+        #search::placeholder{
+            color: black;
+            text-align: center;
+        }   
+
+
+    </style>
+</head>
+<body>
+    <div id = "container">
+        <ul id="logolist">
+            <button><a id="logo" href="file:///E:/html/Intership/lagan.html">365</a></button>
+            <li><a id="try" href="#"><b>Movies</b></a></li>
+            <li><a id="try" href="#"><b>Tvseries</b></a></li>
+            <li><a  id="try"  href="#"><b>Audio</b></a></li>
+        </ul>
+        <div class="slider">
+
+        </div>
+    </div>
+    <div class="mainclass">
+    <div class="imgclass">
+        <img class="img" id="img1"  src="E:\html\Intership\photo\abc1.jpg">
+        <img class="img" id="img2"  src="E:\html\Intership\photo\abc2.jpg">
+        <img class="img" id="img3"  src="E:\html\Intership\photo\abc3.jpg">
+        <img class="img" id="img4"  src="E:\html\Intership\photo\abc4.jpg">
+        <img class="img" id="img5"  src="E:\html\Intership\photo\abc5.jpg">
+     </div>
+        
+        <span class ="arrow prev" onclick="controller(-1)" >&#10094</span>
+        <span class ="arrow after" onclick="controller(1)">&#10095</span>
+        
+            <select class="select1" >
+                <option>Genre</option>
+                <option>All</option>
+                <option>Action</option>
+                <option>Drama</option>
+                <option>Sci-Fic</option>
+            </select>
+            <input style="width: 100%" id = "search" type="text" placeholder="Search your favourite movie title">
+               <!---<button type="button" class="button" style="margin-left: 105%;" ><i class="fa fa-search" aria-hidden="true"></i></button> -->
+            
+         <div class="movieimg">
+           
+            <div class="first">
+                <img src="E:\html\Intership\photo\nano1.jpg" alt="" class="movie" id ="one">
+                <div class="one">
+                    <h3>Haider</h3>
+                    <h4>India Crime Tragedy Film</h4>    
+                </div>
+            </div>    
+            <div class="sec">
+                <img src="E:\html\Intership\photo\nano2.jpg" alt="" class="movie" id ="one">
+                <div class="one">
+                    <h3>Dream2</h3>
+                    <h4>Thriller,Mystery & Comedy</h4>    
+                </div>
+            </div> 
+            <div class="third">
+                <img src="E:\html\Intership\photo\nano3.jpg" alt="" class="movie" id ="one">
+                <div class="one">
+                    <h3>Batman</h3>
+                    <h4>A Marvel Superhero Comics Team</h4>    
+                </div>
+            </div>  
+            <div class="fourth">
+                <img src="E:\html\Intership\photo\nano4.jpg" alt="" class="movie" id ="one">
+                <div class="one">
+                    <h3>Monster Manav</h3>
+                    <h4>Japanese manga series written by Tsugumi.</h4>    
+                </div>
+            </div> 
+            <div class="fifth">
+                <img src="E:\html\Intership\photo\nano5.jpg" alt="" class="movie" id ="one">
+                <div class="one">
+                    <h3>Kill Bill</h3>
+                    <h4>2003 American martial arts film.</h4>    
+                </div>
+            </div>  
+            <div class="sixth">
+                <img src="E:\html\Intership\photo\nano6.jpg" alt="" class="movie" id ="one">
+                <div class="one">
+                    <h3>Rowdy</h3>
+                    <h4>Indian action drama film.</h4>    
+                </div>
+            </div>  
+            <div class="seven">
+                <img src="E:\html\Intership\photo\nano7.jpg" alt="" class="movie" id ="one">
+                <div class="one">
+                    <h3>Agnipaath</h3>
+                    <h4>India Crime Tragedy Film</h4>    
+                </div>
+            </div>  
+            <div class="eight">
+                <img src="E:\html\Intership\photo\nano8.jpg" alt="" class="movie" id ="one">
+                <div class="one">
+                    <h3>Haider</h3>
+                    <h4>India Crime Tragedy Film</h4>    
+                </div>
+            </div> 
+            <div class="nine">
+                <img src="E:\html\Intership\photo\nano9.jpg" alt="" class="movie" id ="one">
+                <div class="one">
+                    <h3>Haider</h3>
+                    <h4>India Crime Tragedy Film</h4>    
+                </div>
+            </div> 
+            <div class="ten">
+                <img src="E:\html\Intership\photo\nano10.jpg" alt="" class="movie" id ="one">
+                <div class="one">
+                    <h3>Haider</h3>
+                    <h4>India Crime Tragedy Film</h4>    
+                </div>
+            </div> 
+            <div class="eleven">
+                <img src="E:\html\Intership\photo\nano11.jpg" alt="" class="movie" id ="one">
+                <div class="one">
+                    <h3>Haider</h3>
+                    <h4>India Crime Tragedy Film</h4>    
+                </div>
+            </div> 
+            <div class="twelve">
+                <img src="E:\html\Intership\photo\nano12.jpg" alt="" class="movie" id ="one">
+                <div class="one">
+                    <h3>Haider</h3>
+                    <h4>India Crime Tragedy Film</h4>    
+                </div>
+            </div> 
+            <div class="thirteen">
+                <img src="E:\html\Intership\photo\nano13.jpg" alt="" class="movie" id ="one">
+                <div class="one">
+                    <h3>Haider</h3>
+                    <h4>India Crime Tragedy Film</h4>    
+                </div>
+            </div> 
+            <div class="fourteen">
+                <img src="E:\html\Intership\photo\nano14.jpg" alt="" class="movie" id ="one">
+                <div class="one">
+                    <h3>Haider</h3>
+                    <h4>India Crime Tragedy Film</h4>    
+                </div>
+            </div> 
+            <div class="fifhteen">
+                <img src="E:\html\Intership\photo\nano15.jpg" alt="" class="movie" id ="one">
+                <div class="one">
+                    <h3>Haider</h3>
+                    <h4>India Crime Tragedy Film</h4>    
+                </div>
+            </div> 
+            <div class="sixteen">
+                <img src="E:\html\Intership\photo\nano16.jpg" alt="" class="movie" id ="one">
+                <div class="one">
+                    <h3>Haider</h3>
+                    <h4>India Crime Tragedy Film</h4>    
+                </div>
+            </div> 
+            <div class="seventeen">
+                <img src="E:\html\Intership\photo\nano17.jpg" alt="" class="movie" id ="one">
+                <div class="one">
+                    <h3>Haider</h3>
+                    <h4>India Crime Tragedy Film</h4>    
+                </div>
+            </div> 
+            <div class="eighteen">
+                <img src="E:\html\Intership\photo\nano18.jpg" alt="" class="movie" id ="one">
+                <div class="one">
+                    <h3>Haider</h3>
+                    <h4>India Crime Tragedy Film</h4>    
+                </div>
+            </div> 
+            <div class="nineteen">
+                <img src="E:\html\Intership\photo\nano19.jpg" alt="" class="movie" id ="one">
+                <div class="one">
+                    <h3>Haider</h3>
+                    <h4>India Crime Tragedy Film</h4>    
+                </div>
+            </div> 
+            <div class="twenty">
+                <img src="E:\html\Intership\photo\nano20.jpg" alt="" class="movie" id ="one">
+                <div class="one">
+                    <h3>Haider</h3>
+                    <h4>India Crime Tragedy Film</h4>    
+                </div>
+            </div> 
+            <div class="twoone">
+                <img src="E:\html\Intership\photo\nano21.jpg" alt="" class="movie" id ="one">
+                <div class="one">
+                    <h3>Haider</h3>
+                    <h4>India Crime Tragedy Film</h4>    
+                </div>
+            </div> 
+            <div class="two2">
+                <img src="E:\html\Intership\photo\nano22.jpg" alt="" class="movie" id ="one">
+                <div class="one">
+                    <h3>Haider</h3>
+                    <h4>India Crime Tragedy Film</h4>    
+                </div>
+            </div> 
+            <div class="two3">
+                <img src="E:\html\Intership\photo\nano23.jpg" alt="" class="movie" id ="one">
+                <div class="one">
+                    <h3>Haider</h3>
+                    <h4>India Crime Tragedy Film</h4>    
+                </div>
+            </div> 
+            <div class="two4">
+                <img src="E:\html\Intership\photo\nano24.jpg" alt="" class="movie" id ="one">
+                <div class="one">
+                    <h3>Haider</h3>
+                    <h4>India Crime Tragedy Film</h4>    
+                </div>
+            </div> 
+            <div class="two5">
+                <img src="E:\html\Intership\photo\nano25.jpg" alt="" class="movie" id ="one">
+                <div class="one">
+                    <h3>Haider</h3>
+                    <h4>India Crime Tragedy Film</h4>    
+                </div>
+            </div> 
+            <div class="two6">
+                <img src="E:\html\Intership\photo\nano26.jpg" alt="" class="movie" id ="one">
+                <div class="one">
+                    <h3>Haider</h3>
+                    <h4>India Crime Tragedy Film</h4>    
+                </div>
+            </div> 
+            <div class="two7">
+                <img src="E:\html\Intership\photo\nano27.jpg" alt="" class="movie" id ="one">
+                <div class="one">
+                    <h3>Haider</h3>
+                    <h4>India Crime Tragedy Film</h4>    
+                </div>
+            </div> 
+            <div class="two8">
+                <img src="E:\html\Intership\photo\nano28.jpg" alt="" class="movie" id ="one">
+                <div class="one">
+                    <h3>Haider</h3>
+                    <h4>India Crime Tragedy Film</h4>    
+                </div>
+            </div>
+            <div class="two9">
+                <img src="E:\html\Intership\photo\nano29.jpg" alt="" class="movie" id ="one">
+                <div class="one">
+                    <h3>Haider</h3>
+                    <h4>India Crime Tragedy Film</h4>    
+                </div>
+            </div>
+            <div class="two10">
+                <img src="E:\html\Intership\photo\nano30.jpg" alt="" class="movie" id ="one">
+                <div class="one">
+                    <h3>Haider</h3>
+                    <h4>India Crime Tragedy Film</h4>    
+                </div>
+            </div>
+            <div class="three1">
+                <img src="E:\html\Intership\photo\nano31.jpg" alt="" class="movie" id ="one">
+                <div class="one">
+                    <h3>Haider</h3>
+                    <h4>India Crime Tragedy Film</h4>    
+                </div>
+            </div>
+            <div class="three2">
+                <img src="E:\html\Intership\photo\nano32.jpg" alt="" class="movie" id ="one">
+                <div class="one">
+                    <h3>Haider</h3>
+                    <h4>India Crime Tragedy Film</h4>    
+                </div>
+            </div>
+            <div class="three3">
+                <img src="E:\html\Intership\photo\nano33.jpg" alt="" class="movie" id ="one">
+                <div class="one">
+                    <h3>Haider</h3>
+                    <h4>India Crime Tragedy Film</h4>    
+                </div>
+            </div>
+            <div class="three4">
+                <img src="E:\html\Intership\photo\nano34.jpg" alt="" class="movie" id ="one">
+                <div class="one">
+                    <h3>Haider</h3>
+                    <h4>India Crime Tragedy Film</h4>    
+                </div>
+            </div>
+            <div class="three5">
+                <img src="E:\html\Intership\photo\nano35.jpg" alt="" class="movie" id ="one">
+                <div class="one">
+                    <h3>Haider</h3>
+                    <h4>India Crime Tragedy Film</h4>    
+                </div>
+            </div>
+            <div class="three6">
+                <img src="E:\html\Intership\photo\nano36.jpg" alt="" class="movie" id ="one">
+                <div class="one">
+                    <h3>Haider</h3>
+                    <h4>India Crime Tragedy Film</h4>    
+                </div>
+            </div>
+            
+           
+             
+
+             
+
+             
+            
+             <!-- <img src="./nano2.jpg" alt="" class="movie">
+             <img src="./nano3.jpg" alt="" class="movie">
+             <img src="./nano4.jpg" alt="" class="movie">
+             <img src="./nano5.jpg" alt="" class="movie">
+             <img src="./nano6.jpg" alt="" class="movie">
+             <img src="./nano7.jpg" alt="" class="movie">
+             <img src="./nano8.jpg" alt="" class="movie">
+             <img src="./nano9.jpg" alt="" class="movie">
+             <img src="./nano10.jpg" alt="" class="movie">
+             <img src="./nano11.jpg" alt="" class="movie">
+             <img src="./nano12.jpg" alt="" class="movie">
+             <img src="./nano13.jpg" alt="" class="movie">
+             <img src="./nano14.jpg" alt="" class="movie">
+             
+             
+             <img src="./nano15.jpg" alt="" class="movie">
+             <img src="./nano16.jpg" alt="" class="movie">
+             <img src="./nano17.jpg" alt="" class="movie">
+             <img src="./nano18.jpg" alt="" class="movie">
+             <img src="./nano19.jpg" alt="" class="movie">
+             <img src="./nano20.jpg" alt="" class="movie">
+             <img src="./nano21.jpg" alt="" class="movie">
+             <img src="./nano22.jpg" alt="" class="movie">
+             <img src="./nano23.jpg" alt="" class="movie">
+             <img src="./nano24.jpg" alt="" class="movie">
+             <img src="./nano25.jpg" alt="" class="movie">
+             <img src="./nano26.jpg" alt="" class="movie">
+             <img src="./nano27.jpg" alt="" class="movie">
+             <img src="./nano28.jpg" alt="" class="movie">
+             <img src="./nano29.jpg" alt="" class="movie">
+             <img src="./nano30.jpg" alt="" class="movie">
+             <img src="./nano31.jpg" alt="" class="movie">
+             <img src="./nano32.jpg" alt="" class="movie">
+             <img src="./nano33.jpg" alt="" class="movie">
+             <img src="./nano34.jpg" alt="" class="movie">
+             <img src="./nano35.jpg" alt="" class="movie">
+             <img src="./nano36.jpg" alt="" class="movie"> -->
+
+         </div>  
+         <footer>
+            <button> 
+              <a href="file:///E:/html/Intership/lagan.html">365</a>  
+            </button>
+            <p>Powered by 365 Entertainment Portal 2019. All Rights Reserved</p>
+        </footer> 
+       
+    </div>  
+
+    <script>
+        let flag =0;
+        function controller(x) {
+            flag=flag +x;
+            
+            slideshow(flag);
+        }
+        slideshow(flag);
+        function slideshow(num){
+            let slide = document.getElementsByClassName("img");
+            if(num==slide.length){
+                flag=0;
+                num=0;
+            }
+            if(num<0){
+                flag=slide.length-1;
+                num=slide.length-1;
+            }
+            for(let y of slide){
+                y.style.display="none";
+            }
+            slide[num].style.display="block";
+        }
+        let select = document.getElementsByClassName("select");
+        select.addEventListener('mouseover',function(){
+            document.getElementsByClassName("select2");
+        });
+        // })
+        
+
+        
+     
+        
+
+    </script>
+</body>
+</html>
